@@ -1,0 +1,90 @@
+<%- include ('partials/_header') %>
+
+					<header id="header" class="amber-text text-darken-3 yellow accent-3">
+                        ¡Ingrese nuevo plato al menú de comida!
+                    </header>
+
+                    <form id="enviar-plato" action="/add" method="post" class="col s10 offset-s1">
+                        <div class="row">
+
+                                <div class="input-field col s12">
+                                    <input id="plato" name="plato" type="text">
+                                    <label for="plato">Nombre del plato:</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input id="precio" name="precio" type="number">
+                                    <label for="precio">Precio en $:</label>
+                                </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col s6">
+                                <button id="enviar" class="btn waves-effect waves-light yellow-text text-darken-4 yellow accent-1" type="submit">Agregar al menú
+                                </button>
+                            </div>
+
+                            <div class="col s6">
+                        		<button id="resetBtn" class="btn waves-effect waves-light yellow darken-3">Reestablecer
+                        		</button>
+                    		</div>
+
+                        </div>
+
+                        <div class="row">
+                        	<div class="col s12">
+                            	<button id="mostrarMenuBtn" class="btn waves-effect yellow darken-1">
+                            		Mostrar menú
+                            	</button>
+                        	</div>
+                    	</div>
+                 
+                    </form>
+
+                    	<div id="tabla" class="row">
+                    		<div class="col s10 offset-s1 card">
+                    			<% if(data[0] !== undefined){ %>
+	                    		<table class="table centered">
+		                    		<thead>
+			                    		<tr>
+			                    			<th>n°</th>
+			                    			<th>Platillo</th>
+			                    			<th>Precio en $</th>
+			                    			<th></th>
+			                    		</tr>
+		                    		</thead>
+		                    		<tbody>
+		                    			<% data.forEach(function(data,i){ %>
+		                    				<tr>
+		                    					<td><%= (i+1)%></td>
+		                    					<td><%= data.plato %></td>
+		                    					<td>$ <%= data.precio %></td>
+		                    					<td>
+		                    						<a href="/delete/<%= data.id %>" class="btn-floating waves-effect waves-light red btn-small">
+		                    							<i class="material-icons">clear</i>
+		                    						</a>
+		                    						<a href="/update/<%= data.id %>" class="btn-floating waves-effect waves-light blue btn-small">
+		                    							<i class="material-icons">edit</i>
+		                    						</a>
+		                    					</td>
+		                    				</tr>
+		                    			<% }); %>
+		                    		</tbody>
+		                    	</table>
+		                    	<div class="card-action">
+	                    			<a id="btnLimpiar" href="/clear" class="btn waves-effect yellow darken-3">
+	                            	Limpiar menú
+	                        		</a>
+	                    		</div>
+		                    	<% } else { %>
+		                    	<div class="card-content cursive">
+		                    		<p>No hay ningún plato en el menú...</p>
+		                    	</div>
+		                    	<% }  %>
+                    		</div>
+                    	</div>
+
+                    <script type="text/javascript" src="/js/script.js"></script>
+
+<%- include ('partials/_footer') %>

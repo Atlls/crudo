@@ -1,0 +1,11 @@
+Hola.
+
+Para que la pagina funcione, solo sigue dos pasos.
+
+El primero es inicar el servidor, entrando a una consola, luego a éste directorio y poniendo el comando 'npm run dev'.
+
+El segundo es iniciar el servidor MySQL, entrando a la consola de MySQL Server, solo copia y pega el contenido del archivo db.sql dentro de la carpeta database de este directorio; pulsa enter y estará trabajando el servidor MySQL.
+
+Si no hay problemas, deberías ver la pagina en tu navegador en localhost:3000
+
+Buen provecho!

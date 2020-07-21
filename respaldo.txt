@@ -1,0 +1,13 @@
+<div class="col s6">
+                                <button id="resetBtn" class="btn waves-effect waves-light yellow darken-1" type="submit">Reestablecer
+                                </button>
+                            </div>
+
+                            <div class="row">
+
+                            <div class="col s12">
+                                <button id="mostrarMenuBtn" class="btn waves-effect yellow darken-1" type="submit" name="action">Mostrar menú de comida
+                                </button>
+                            </div>
+
+                        </div>
